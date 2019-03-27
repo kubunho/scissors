@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mundex</title>
+</head>
+<body>
+    <h1>
+        <marquee>Witam graczy. </marquee>
+    </h1>
+    <h2>
+            Zapraszam do wyprobowania prostej gry w papier kamien i nozyczki.
+    </h2>
+    <select id="select">
+        <option id="Stone" value="Stone">Stone</option>
+        <option id="Scissors" value="Scissors">Scissors</option>
+        <option id="Paper" value="Paper">Paper</option>
+    </select>
+    <br>
+    <button id="Start"value="Start">Start</button>
+    <script>
+        var Stone= document.getElementById("Stone");
+        var Scissors= document.getElementById("Scissors"); 
+        var Paper= document.getElementById("Paper");
+        var Start= document.getElementById("Start");
+        var Computer = ["Stone","Scissors", "Paper"];
+        var select= document.getElementById("select");
+        
+        Start.addEventListener("click", function(){
+            var YourChoice =select.value;
+            var ComputerChoice = Computer[Math.floor(Math.random()*3)];  
+            console.log('Twój wybór', YourChoice);
+            console.log('Komputra wybór', ComputerChoice)
+            if (YourChoice == "Stone") {
+                if (ComputerChoice == "Stone") {
+                    console.log("Remis");
+
+                }else if (ComputerChoice == "Scissors") {
+                    console.log("WINEK");
+
+                } else if (ComputerChoice =="Paper") {
+                    console.log("Lose");
+                }
+            }
+            
+            else if (YourChoice == "Scissors") {
+                if (ComputerChoice == "Stone") {
+                        console.log("Lose");
+
+                    }else if (ComputerChoice =="Scissors") {
+                        console.log("Remis");
+
+                    } else if (ComputerChoice =="Paper") {
+                        console.log("WINEK");
+                };
+            }
+            
+            else if (YourChoice == "Paper") {
+                if (ComputerChoice == "Stone") {
+                        console.log("WINEK");
+
+                    }else if (ComputerChoice =="Scissors") {
+                        console.log("Lose");
+
+                    } else if (ComputerChoice =="Paper") {
+                        console.log("Remis");
+                };
+    }});   
+            
+        
+    </script>
+</body>
+</html>
